@@ -45,7 +45,7 @@ function Login() {
      return (
           <div className='container'>
                 <div className={styles.formDiv}>
-                    <h1>Kindly enter login code below</h1>
+                    <h1>Kindly enter login credentials below</h1>
                     <form className={styles.form}>
                          <input type='text' required onChange={(e) => {setChurch(e.target.value)}} placeholder = 'Church Name' />
                          <input type='password' required onChange={(e) => {setCode(e.target.value)}} placeholder = 'Password' />
