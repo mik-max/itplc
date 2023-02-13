@@ -3,7 +3,7 @@ import styles from './Home.module.css'
 function Home() {
      const [videoUrl, setVideoUrl] = useState('')
      const [title, setTitle] = useState('')
-     let DEVBASEURL = 'http://localhost:8009'
+     let DEVBASEURL = 'https://itplc-api.onrender.com'
      useEffect(() => {
           fetch(`${DEVBASEURL}/api/v1/home`).then(res => {return res.json()}).then((result) => {
                let data = result.data;

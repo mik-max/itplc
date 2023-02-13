@@ -7,7 +7,7 @@ function Login() {
      const [alertText, setAlertText] = useState('')
      const [alertTitle, setAlertTitle] = useState('')
      const [showAlert, setShowAlert] = useState(false)
-     let DEVBASEURL = 'http://localhost:8009'
+     let DEVBASEURL = 'https://itplc-api.onrender.com'
      const handleLogin = (e) => {
           e.preventDefault()
           if(code !== '' && church !== ''){
