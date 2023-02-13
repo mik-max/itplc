@@ -1,0 +1,39 @@
+.videoDiv{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1.5rem;
+     width: 100%;
+     max-width: 650px;
+     height: 100%;
+     background-color: white;
+     margin: 100px auto 50px;
+     padding: 30px 20px 50px;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     border-radius: 10px;    
+}
+.videoDiv h1{
+     background: linear-gradient(90deg, #2C7ACE, black);
+     background-clip: text;
+     -webkit-background-clip: text;
+     color: transparent;
+     text-align: center;
+     font-size: 25px;
+}
+.videoDiv video{
+     width:500px;
+     height: 250px;
+}
+
+.videoDiv button{
+     background-color: #2C7ACE;
+     color: white;
+     width: 60%;
+}
+
+@media (max-width: 767px){
+     .videoDiv video{
+          width:100%;
+          height: 100%;
+     }
+}

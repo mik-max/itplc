@@ -6,8 +6,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+.App{
+     min-height: 100vh;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+button{
+     outline: none;
+     border: none;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 4px;
+     min-width: 180px;
+     padding: 12px;
+     text-transform: uppercase;
+     cursor: pointer;
+}
+button:focus, input:focus{
+     outline: none;
+}
+.container{
+     border: 1px solid white;
+     background-image: url("./assets/banner03.svg");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100%;
 }
