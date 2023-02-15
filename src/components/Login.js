@@ -7,6 +7,7 @@ function Login() {
      const [alertText, setAlertText] = useState('')
      const [alertTitle, setAlertTitle] = useState('')
      const [showAlert, setShowAlert] = useState(false)
+     const [isLoading, setIsLoading] = useState(false)
      let DEVBASEURL = 'https://itplc-api.onrender.com'
      const handleLogin = (e) => {
           e.preventDefault()
@@ -15,7 +16,7 @@ function Login() {
                     church: church,
                     code: code
                }
-
+               setIsLoading(true)
                fetch(`${DEVBASEURL}/api/v1/login`, {
                     headers:{
                          'Content-Type': 'application/json'
@@ -23,21 +24,26 @@ function Login() {
                     method: 'post',
                     body: JSON.stringify(payload)
                }).then( res => { return res.json()}).then((data) => {
+                    
                     if(data.status === 'Ok'){
                          console.log(data)
                          sessionStorage.setItem('isLoggegIn', 'true')
                          setAlertText(data.message);
-                         setAlertTitle('Success!')
-                         setShowAlert(true)
+                         setAlertTitle('Success!');
+                         setIsLoading(false);
+                         setShowAlert(true);
                     }else{
                          setAlertText(data.message);
-                         setAlertTitle('Error!')
-                         setShowAlert(true)
+                         setAlertTitle('Error!');
+                         setIsLoading(false);
+                         setShowAlert(true);
                     }
                })
           }else{
+               setIsLoading(false)
                setAlertText("Kindly fill out all fields.");
-               setAlertTitle('Incomplete! 😒')
+               setAlertTitle('Incomplete! 😒');
+
                setShowAlert(true)
           }
           
@@ -55,12 +61,15 @@ function Login() {
                     show={showAlert}
                     title={alertTitle}
                     text={alertText}
-                    onConfirm={() => {setShowAlert(false); window.location.href = '/'}}>
+                    onConfirm={() => {setShowAlert(false); window.location.href = '/'; }}>  
 
                     </SweetAlert>
+                    {isLoading && <img src='/Images/preloader.gif' className={styles.loader} />}
                </div>
           </div>
      )
 }
 
 export default Login
+
+
