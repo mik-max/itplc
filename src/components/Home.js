@@ -31,7 +31,7 @@ function Home() {
                <div className={styles.videoDiv}>
                     <h1>{title}</h1>
                     <video controls src={videoUrl}></video>
-                    <button id='download' onClick={handleDownload}>Download</button>
+                    {/* <button id='download' onClick={handleDownload}>Download</button> */}
                </div>
           </main>
      )
