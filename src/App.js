@@ -13,7 +13,7 @@ function App() {
     <div className="App">
      <Header/>
      {
-          isisLoggegIn  == 'true' ?  <Home/> : <Login/>
+          isisLoggegIn  === 'true' ?  <Home/> : <Login/>
      }
     
      <Footer/>

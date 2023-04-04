@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styles from './Login.module.css'
 import SweetAlert from 'sweetalert-react/lib/SweetAlert'
+import loader from '../assets/preloader.gif'
 function Login() {
      const [church, setChurch] = useState('')
      const [code, setCode] = useState('')
@@ -64,7 +65,7 @@ function Login() {
                     onConfirm={() => {setShowAlert(false); window.location.href = '/'; }}>  
 
                     </SweetAlert>
-                    {isLoading && <img src='/Images/preloader.gif' className={styles.loader} />}
+                    {isLoading && <img src={loader} alt = 'loading....' className={styles.loader} />}
                </div>
           </div>
      )
