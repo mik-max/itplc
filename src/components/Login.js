@@ -33,7 +33,7 @@ function Login() {
                          setAlertTitle('Success!');
                          setIsLoading(false);
                          setShowAlert(true);
-                         window.location.href='https://loveworldteensandyouthministry.org/itplc'
+                         // window.location.href='/itplc'
                     }else{
                          setAlertText(data.message);
                          setAlertTitle('Error!');
