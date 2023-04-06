@@ -3,10 +3,13 @@ import styles from './Home.module.css'
 function Home() {
      const [videoUrl, setVideoUrl] = useState('')
      const [title, setTitle] = useState('')
+     const [videos, setVideos] = useState([])
      let DEVBASEURL = 'https://itplc-api.onrender.com'
      useEffect(() => {
           fetch(`${DEVBASEURL}/api/v1/home`).then(res => {return res.json()}).then((result) => {
                let data = result.data;
+               console.log(data)
+               setVideos(data)
                setVideoUrl(data.videoUrl)
                setTitle(data.title)
           })
@@ -28,11 +31,18 @@ function Home() {
      }
      return (
           <main className='container'>
-               <div className={styles.videoDiv}>
-                    <h1>{title}</h1>
-                    <video controls src={videoUrl}></video>
-                    {/* <button id='download' onClick={handleDownload}>Download</button> */}
+               <div className={styles.VideoContainer}>
+                    {
+                         videos.map((video, index) => (
+                              <div key={index} className={styles.videoDiv}>
+                                   <h1>{video.title}</h1>
+                                   <video controls src={video.videoUrl}></video>
+                                   {/* <button id='download' onClick={handleDownload}>Download</button> */}
+                              </div>
+                         ))
+                    }
                </div>
+               
           </main>
      )
 }
