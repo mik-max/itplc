@@ -8,8 +8,6 @@ function Home() {
      useEffect(() => {
           fetch(`${DEVBASEURL}/api/v1/home`).then(res => {return res.json()}).then((result) => {
                let data = result.data;
-               console.log(data)
-               setVideos(data)
                setVideoUrl(data.videoUrl)
                setTitle(data.title)
           })
@@ -24,7 +22,6 @@ function Home() {
           aTag.href = `${url}?dl=`;// specific to sanity
           aTag.download= url.replace(/^.*[\\\/]/, '');
           document.body.appendChild(aTag)
-          console.log(aTag)
           aTag.click();
           aTag.remove();
           

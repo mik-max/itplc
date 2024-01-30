@@ -27,7 +27,6 @@ function Login() {
                }).then( res => { return res.json()}).then((data) => {
                     
                     if(data.status === 'Ok'){
-                         console.log(data)
                          sessionStorage.setItem('isLoggegIn', 'true')
                          setAlertText(data.message);
                          setAlertTitle('Success!');
