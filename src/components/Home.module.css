@@ -41,6 +41,7 @@
      width: 60%;
 }
 
+
 @media (max-width: 768px){
      .videoDiv video{
           width:100%;

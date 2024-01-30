@@ -66,7 +66,7 @@ function Login() {
                     onConfirm={() => {setShowAlert(false); window.location.href = '/'; }}>  
 
                     </SweetAlert>
-                    {isLoading && <img src={loader} alt = 'loading....' className={styles.loader} />}
+                    {isLoading && <div className={styles.loaderContainer}><img src={loader} alt = 'loading....' className={styles.loader} /></div>}
                </div>
           </div>
      )
